@@ -6,6 +6,9 @@
 #define CLIONPROJECT_SIMPLEREG_H
 
 #include "SimpleTeam.h"
+#include<iomanip>
+#include<algorithm>
+
 #include <string>
 using namespace std;
 

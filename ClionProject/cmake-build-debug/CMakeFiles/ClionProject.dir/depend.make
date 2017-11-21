@@ -8,5 +8,7 @@ CMakeFiles/ClionProject.dir/SimpleReg.cpp.o: ../SimpleTeam.h
 CMakeFiles/ClionProject.dir/SimpleTeam.cpp.o: ../SimpleTeam.cpp
 CMakeFiles/ClionProject.dir/SimpleTeam.cpp.o: ../SimpleTeam.h
 
+CMakeFiles/ClionProject.dir/main.cpp.o: ../SimpleReg.h
+CMakeFiles/ClionProject.dir/main.cpp.o: ../SimpleTeam.h
 CMakeFiles/ClionProject.dir/main.cpp.o: ../main.cpp
 

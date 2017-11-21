@@ -9,10 +9,18 @@
 /Users/king/Documents/ClionProject/SimpleReg.cpp
 SimpleReg.h
 /Users/king/Documents/ClionProject/SimpleReg.h
+iomanip
+-
+algorithm
+-
 
 /Users/king/Documents/ClionProject/SimpleReg.h
 SimpleTeam.h
 /Users/king/Documents/ClionProject/SimpleTeam.h
+iomanip
+-
+algorithm
+-
 string
 -
 
@@ -29,4 +37,6 @@ iostream
 /Users/king/Documents/ClionProject/main.cpp
 iostream
 -
+SimpleReg.h
+/Users/king/Documents/ClionProject/SimpleReg.h
 

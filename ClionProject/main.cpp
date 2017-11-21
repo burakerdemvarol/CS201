@@ -1,6 +1,13 @@
 #include <iostream>
+#include "SimpleReg.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    SimpleReg *deneme = new SimpleReg();
+
+    deneme->addTeam("fenerbahce" , "mavi");
+    deneme->addTeam("galatasaray", "kirmizi");
+
+    deneme->displayAllTeams();
     return 0;
+
 }

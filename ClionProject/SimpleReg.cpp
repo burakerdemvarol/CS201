@@ -3,34 +3,44 @@
 //
 
 #include "SimpleReg.h"
+#include<iomanip>
+#include<algorithm>
 
 using namespace std;
 
 SimpleReg::SimpleReg() {
+    teams = NULL;
     teamNo = 0;
 }
 
 void SimpleReg::addTeam(string teamName, string teamColor) {
 
     if(findTeam(teamName) == -1){
-        cout << "Team is exist !!! try different team name"<< endl;
-    }else{
         Team *tmp = new Team[teamNo + 1];
-        for(int i = 0; i < teamNo; i++){
+        for(int i = 0; i <= teamNo; i++){
             tmp[i] = teams[i];
         }
-        delete(teams);
+        teams[teamNo].setName(teamName);
+        teams[teamNo].setColor(teamColor);
+
+        if(teams != NULL) {
+            delete (teams);
+        }
         teams = tmp;
-        teams[teamNo + 1].setName(teamName);
-        teams[teamNo + 1].setColor(teamColor);
+
         teamNo++;
+
         cout << "The team \'" << teamName << "\' has been added!!!" << endl;
+
+    }else{
+        cout << "Team is exist !!! try different team name..."<< endl;
     }
 }
 
 void SimpleReg::removeTeam(string teamName) {
 
-    if(findTeam(teamName)){
+    if(findTeam(teamName) > 0){
+
         Team *tmp = new Team[teamNo - 1];
         for(int i = 0; i < (findTeam(teamName));i++){
             tmp[i] = teams[i];
@@ -58,18 +68,20 @@ void SimpleReg::displayAllTeams() {
 }
 
 int SimpleReg::findTeam(string teamName) {
-    string lowTeamName;
-    string newLowTeamName;
+    if(teams == NULL){
+        return -1;
+    }
+    for(int i = 0; i < teamName.size(); i++) {
+        teamName[i] = tolower(teamName[i]);
+        for (int j = 0; j < teamNo; j++) {
+            string newTeamName = teams[j].getName();
+            for (int k = 0; k < newTeamName.size(); k++) {
+                newTeamName[k] = tolower(newTeamName[k]);
+            }
+        }
+        if (!(newTeamName.compare())) {
 
-    lowTeamName = teamName;
-
-    transform(lowTeamName.begin(),lowTeamName.end(),lowTeamName.begin(),::tolower);
-
-    for(int i=0;i<teamNo;i++){
-        newLowTeamName = teams[i].getName();
-        transform(newLowTeamName.begin(),newLowTeamName.end(),newLowTeamName.begin(),::tolower);
-        if(lowTeamName.compare(newLowTeamName)==0)
-            return i;
+        }
     }
     return -1;
 }
