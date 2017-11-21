@@ -10,9 +10,9 @@ Team::Team() {
     teamColor = "";
 }
 
-Team::Team(string teamName, string teamColor) {
-    teamName = teamName;
-    teamColor = teamColor;
+Team::Team(string name, string color) {
+    teamName = name;
+    teamColor = color;
 }
 
 Team::~Team() {
@@ -23,15 +23,15 @@ string Team::getName() {
     return teamName;
 }
 
-void Team::setName(string teamName) {
-    teamName = teamName;
+void Team::setName(string name) {
+    teamName = name;
 }
 
 string Team::getColor() {
-    return std::string();
+    return teamColor;
 }
 
-void Team::setColor(string teamColor) {
-    teamColor = teamColor;
+void Team::setColor(string color) {
+    teamColor = color;
 }
 
