@@ -50,7 +50,10 @@ void SimpleReg::removeTeam(string teamName) {
         for(int i = findTeam(teamName) + 1; i < teamNo; i++){
             tmp[i-1] = teams[i];
         }
-        delete []teams;
+        if(teams != NULL) {
+            delete[]teams;
+        }
+
         teams = tmp;
         teamNo--;
         cout << "The team \'" << teamName << "\' has been deleted!!!" << endl;
@@ -64,30 +67,26 @@ void SimpleReg::displayAllTeams() {
         cout << "--EMPTY--" << endl;
     }else {
         for(int i =0;i < teamNo; i++) {
-            cout << i+1 << ".team Name : " << teams[i].getName() << ", Team Color : " << teams[i].getColor() << endl;
+            cout << i+1 << ".Team Name : " << teams[i].getName() << ", Team Color : " << teams[i].getColor() << endl;
         }
     }
 }
 
 int SimpleReg::findTeam(string teamName) {
+    string lowTeamName;
+    string newLowTeamName;
+    lowTeamName = teamName;
 
-    if(teams == NULL){
-        return -1;
-    }
+    transform(lowTeamName.begin(),lowTeamName.end(),lowTeamName.begin(),::tolower);
 
-    for(int i = 0; i < teamName.size(); i++) {
-        teamName[i] = tolower(teamName[i]);
-        for (int j = 0; j < teamNo; j++) {
-            string newTeamName = teams[j].getName();
-            for (int k = 0; k < newTeamName.size(); k++) {
-                newTeamName[k] = tolower(newTeamName[k]);
-            }
-            if (!(newTeamName.compare(teamName))) {
-                return j;
-            }
-        }
+    for(int i=0;i<teamNo;i++){
+        newLowTeamName = teams[i].getName();
+        transform(newLowTeamName.begin(),newLowTeamName.end(),newLowTeamName.begin(),::tolower);
+        if(lowTeamName.compare(newLowTeamName)==0)
+            return i;
     }
     return -1;
 }
+
 
 
