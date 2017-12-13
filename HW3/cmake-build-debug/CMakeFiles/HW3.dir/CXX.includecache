@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/king/Documents/HW3/SimpleReg.cpp
+SimpleReg.h
+/Users/king/Documents/HW3/SimpleReg.h
+iostream
+-
+string
+-
+utility
+-
+
+/Users/king/Documents/HW3/SimpleReg.h
+string
+-
+SimpleTeam.h
+/Users/king/Documents/HW3/SimpleTeam.h
+
+/Users/king/Documents/HW3/SimpleTeam.cpp
+SimpleTeam.h
+/Users/king/Documents/HW3/SimpleTeam.h
+
+/Users/king/Documents/HW3/SimpleTeam.h
+string
+-
+iostream
+-
+
+/Users/king/Documents/HW3/main.cpp
+iostream
+-
+SimpleReg.h
+/Users/king/Documents/HW3/SimpleReg.h
+SimpleTeam.h
+/Users/king/Documents/HW3/SimpleTeam.h
+
